@@ -51,12 +51,17 @@ public class Hanoi
   
   
   // sorts discs to new area
-  public void moveTower() {
-    // base case
-    // new tower
-    
-    // recursive case
-    
+  public void moveTower(int size, int start, int dest) {
+    // base case : move size 1 tower
+    if (size == 1) {
+      this.towers.moveDisc(start, dest);
+      this.print();
+    } // end base case
+    else { // recursive case TODO
+    // move tower with size-1 to different column
+    // move biggest disc
+      this.moveTower(size-1, ?start?, ?dest?);
+    } // end recursive case
   }// method: moveTower
   
   // method for moving disc from top of one tower
