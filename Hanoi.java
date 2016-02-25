@@ -63,14 +63,28 @@ public class Hanoi
   // to top of other tower
   public void moveDisc(int start, int destination) {
     // loop through start column
-    for (int i = 0; i < NUM_TOWERS; i++) {
+    int tmp = 0;
+    for (int i = NUM_TOWERS-1; i >= 0; i--) {
       // find disc value
-      this.towers[i][0]
-    // loop through destination column
+      // loop through destination column
+      // i = towers j = discs
+      if (this.towers[i][start] != 0) {
+        tmp = this.towers[i][start];
+        // replace disc value with 0
+        this.towers[i][start] = 0;
+        //System.out.println(tmp);
+        break;
+      }
+    }
     // find first empty slot
-    // copy disc value into destination
-    // replace disc value with 0
-  }
+    for (int i = 0; i < NUM_TOWERS; i++) {
+      if (this.towers[i][destination] == 0) {
+      // copy disc value into destination
+        this.towers[i][destination] = tmp;
+        break;
+      }
+    }
+  } // method: moveDisc
   
   // TODO:
 
@@ -80,6 +94,15 @@ public class Hanoi
   public static void main(String[] args) {
     Hanoi tower = new Hanoi(3);
     tower.print();
+    /*tower.moveDisc(0, 2);
+    System.out.println();
+    tower.print();
+    tower.moveDisc(0, 2);
+    System.out.println();
+    tower.print();
+    tower.moveDisc(0, 2);
+    System.out.println();
+    tower.print();*/
    
   } // method: main
     
