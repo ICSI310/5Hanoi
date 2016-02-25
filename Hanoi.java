@@ -2,7 +2,7 @@
 public class Hanoi 
 {  // number of discs
    public static final int MAX_DISCS = 99;
-   public static final int NUM_TOWERS = 99;
+   public static final int NUM_TOWERS = 3;
    // lets be reckless and skip getters/setters and make it public
    // bad form, but we'll do it just this once
    public int[][] towers = new int[NUM_TOWERS][MAX_DISCS];
@@ -30,11 +30,14 @@ public class Hanoi
    // toString to help with print
    public String toString() {
      String out = "";
-     for (int i = 0; i < NUM_TOWERS; i++) {
+     for (int i = NUM_TOWERS; i > 0; i--) {
+       //System.out.println(" i = " + i);
        for (int j = 0; j < this.numDiscs; j++) {
-         out = out + this.towers[i][j] + " ";
+         //System.out.println(" j = " + j);
+         out = out + this.towers[i-1][j] + " ";
        }
        out = out + "\n";
+       //System.out.println(out);
      }
      return(out);
    } // method toString
@@ -50,15 +53,14 @@ public class Hanoi
   // sorts discs to new area
   public void moveTower() {
     // base case
-    
+    // new tower
     
     // recursive case
     
   }// method: moveTower
   
   // TODO:
-  // printing upside down; fix that
-  // print too many 0s
+
   // actually need to make recursive method.
   
   // the main method
