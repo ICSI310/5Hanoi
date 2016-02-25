@@ -59,6 +59,19 @@ public class Hanoi
     
   }// method: moveTower
   
+  // method for moving disc from top of one tower
+  // to top of other tower
+  public void moveDisc(int start, int destination) {
+    // loop through start column
+    for (int i = 0; i < NUM_TOWERS; i++) {
+      // find disc value
+      this.towers[i][0]
+    // loop through destination column
+    // find first empty slot
+    // copy disc value into destination
+    // replace disc value with 0
+  }
+  
   // TODO:
 
   // actually need to make recursive method.
