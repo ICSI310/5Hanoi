@@ -42,26 +42,45 @@ public class Hanoi
      return(out);
    } // method toString
    
+   // NOTE: This hasn't been tested with anything
+   // besides the initial data from the constructor
+   public int getTopDisc(int towerNumber) {
+     for (int i = this.numDiscs-1; i >= 0; i--) {
+       //System.out.println(this.towers[towerNumber][i]);
+       // How do we find the top disc?
+       // search for integer in spaces are not zero
+        if (this.towers[i][towerNumber] != 0)
+          return(this.towers[i][towerNumber]);
+     }
+     return 0;
+   }
+   
    // print the current state
    public void print() {
      System.out.println(this);
    }
    
-  
+   // Identify eligible towers to take discs?
+   /*public int discCheck() {
+     // check if size is less than the disc size of existing discs
+     
+   }*/
   
   
   // sorts discs to new area
   public void moveTower(int size, int start, int dest) {
     // base case : move size 1 tower
     if (size == 1) {
-      this.towers.moveDisc(start, dest);
+      this.moveDisc(start, dest);
       this.print();
     } // end base case
     else { // recursive case TODO
     // move tower with size-1 to different column
     // move biggest disc
-      this.moveTower(size-1, 1, 1);
+      //this.moveTower(size-1, ?start, ?dest);
+      this.print();
     } // end recursive case
+    this.print();
   }// method: moveTower
   
   // method for moving disc from top of one tower
@@ -91,14 +110,14 @@ public class Hanoi
     }
   } // method: moveDisc
   
-  // TODO:
-
-  // actually need to make recursive method.
-  
   // the main method
   public static void main(String[] args) {
     Hanoi tower = new Hanoi(3);
     tower.print();
+    System.out.println(tower.getTopDisc(0));
+    
+    //tower.moveTower(3, 0, 2);
+    
     /*tower.moveDisc(0, 2);
     System.out.println();
     tower.print();
