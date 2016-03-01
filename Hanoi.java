@@ -60,7 +60,7 @@ public class Hanoi
     else { // recursive case TODO
     // move tower with size-1 to different column
     // move biggest disc
-      this.moveTower(size-1, ?start?, ?dest?);
+      this.moveTower(size-1, 1, 1);
     } // end recursive case
   }// method: moveTower
   
