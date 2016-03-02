@@ -25,6 +25,7 @@ public class Hanoi
      for (int i = 0; i < size; i++) {
        System.out.println(i);
        this.towers[i][0] = size - i;
+       System.out.println(i);
      }
    } //constructor: Hanoi
 
