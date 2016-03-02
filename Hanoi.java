@@ -61,23 +61,36 @@ public class Hanoi
    }
    
    // Identify eligible towers to take discs?
+   // NEW: we don't need this.
    /*public int discCheck() {
      // check if size is less than the disc size of existing discs
      
    }*/
   
-  
+   public void moveTower(int dest) {
+     // figures out additional variables method called from 
+     // main makes more sense
+     
+     
+     moveTower(this.numDiscs, start, dest, spare)
+   }
+   
+   
   // sorts discs to new area
-  public void moveTower(int size, int start, int dest) {
+  // NEW: spare (to more effectively keep track of which tower is which)
+  public void moveTower(int size, int start, int dest, int spare) {
     // base case : move size 1 tower
     if (size == 1) {
       this.moveDisc(start, dest);
       this.print();
     } // end base case
-    else { // recursive case TODO
-    // move tower with size-1 to different column
-    // move biggest disc
-      //this.moveTower(size-1, ?start, ?dest);
+    else { // recursive case 
+      // move size-1 tower from top of tower to spare
+      moveTower(size-1, start, spare, dest);
+      // move largest disc to dest
+      moveTower(1, start, dest, spare);
+      // move size-1 tower from spare to destination
+      moveTower(size-1, spare, dest, start);      
       this.print();
     } // end recursive case
     this.print();
@@ -116,7 +129,7 @@ public class Hanoi
     tower.print();
     System.out.println(tower.getTopDisc(0));
     
-    //tower.moveTower(3, 0, 2);
+    tower.moveTower(3, 0, 2);
     
     /*tower.moveDisc(0, 2);
     System.out.println();
