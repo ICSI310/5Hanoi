@@ -137,7 +137,7 @@ public class Hanoi
       }
     }
     // find first empty slot
-    for (int i = 0; i < NUM_TOWERS; i++) {
+    for (int i = 0; i < this.numDiscs; i++) {
       if (this.towers[i][destination] == 0) {
       // copy disc value into destination
         this.towers[i][destination] = tmp;
