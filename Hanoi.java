@@ -69,21 +69,35 @@ public class Hanoi
   
    public void moveTower(int dest) {
      // figures out additional variables method called from 
-     // main makes more sense
+     // main to be easier to use
      
-     // assume there is only one tower
+     int start = 0;
+     int spare = 0;
+     // assume there is only one filled tower
      // find the first tower that has discs in it and store the index in start
      for (int i = 0; i < this.NUM_TOWERS; i++) {
        if (this.getTopDisc(i) > 0) {
-         int start = i;
+         start = i;
          break;
        }
      }
      
+     if (start == dest) {
+       System.out.println("The tower is already in slot " + dest);
+     }
+     else {
      
+       // find spare peg
+       for (int i = 0; i < this.NUM_TOWERS; i++) {
+         if (i != start && i != dest) {
+           spare = i;
+           break;
+         }
+       }
      
-     
-     moveTower(this.numDiscs, start, dest, spare)
+       // call recursive moveTower method
+       moveTower(this.numDiscs, start, dest, spare);
+     }
    }
    
    
@@ -140,7 +154,7 @@ public class Hanoi
     tower.print();
     System.out.println(tower.getTopDisc(0));
     
-    tower.moveTower(3, 0, 2);
+    tower.moveTower(2);
     
     /*tower.moveDisc(0, 2);
     System.out.println();
