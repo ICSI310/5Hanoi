@@ -51,9 +51,12 @@ public class Hanoi
        //System.out.println(this.towers[towerNumber][i]);
        // How do we find the top disc?
        // search for integer in spaces are not zero
-        if (this.towers[i][towerNumber] != 0)
-          return(this.towers[i][towerNumber]);
+       if (this.towers[i][towerNumber] != 0) {
+         System.out.println("getTopDisc: " + this.towers[i][towerNumber]);
+         return(this.towers[i][towerNumber]);
+       }
      }
+     System.out.println("getTopDisc: " + 0);
      return 0;
    }
    
