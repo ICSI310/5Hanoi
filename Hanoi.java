@@ -116,9 +116,9 @@ public class Hanoi
       moveTower(1, start, dest, spare);
       // move size-1 tower from spare to destination
       moveTower(size-1, spare, dest, start);      
-      this.print();
+      //this.print();
     } // end recursive case
-    this.print();
+    //this.print();
   }// method: moveTower
   
   // method for moving disc from top of one tower
@@ -150,21 +150,13 @@ public class Hanoi
   
   // the main method
   public static void main(String[] args) {
-    Hanoi tower = new Hanoi(3);
-    tower.print();
-    System.out.println(tower.getTopDisc(0));
+    Hanoi tower = new Hanoi(5);
     
+    System.out.println("new tower");
+    tower.print();
+    
+    System.out.println("moving tower");
     tower.moveTower(2);
-    
-    /*tower.moveDisc(0, 2);
-    System.out.println();
-    tower.print();
-    tower.moveDisc(0, 2);
-    System.out.println();
-    tower.print();
-    tower.moveDisc(0, 2);
-    System.out.println();
-    tower.print();*/
    
   } // method: main
     
