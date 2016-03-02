@@ -71,6 +71,17 @@ public class Hanoi
      // figures out additional variables method called from 
      // main makes more sense
      
+     // assume there is only one tower
+     // find the first tower that has discs in it and store the index in start
+     for (int i = 0; i < this.NUM_TOWERS; i++) {
+       if (this.getTopDisc(i) > 0) {
+         int start = i;
+         break;
+       }
+     }
+     
+     
+     
      
      moveTower(this.numDiscs, start, dest, spare)
    }
