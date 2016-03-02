@@ -15,8 +15,8 @@ public class Hanoi
      this.numDiscs = size;
      
      // make 2nd & 3rd towers all 0s
-     for (int i = 1; i < NUM_TOWERS; i++) { // 3 columns
-       for (int j = 0; j < size; j++) { // size rows
+     for (int i = 1; i < size; i++) { // 3 columns
+       for (int j = 0; j < NUM_TOWERS; j++) { // size rows
          this.towers[i][j] = 0; 
        }
      }
