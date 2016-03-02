@@ -103,7 +103,7 @@ public class Hanoi
        // call recursive moveTower method
        moveTower(this.numDiscs, start, dest, spare);
      }
-   }
+   } // method: moveTower(dest)
    
    
   // sorts discs to new area
@@ -124,14 +124,14 @@ public class Hanoi
       //this.print();
     } // end recursive case
     //this.print();
-  }// method: moveTower
+  }// method: moveTower (size, start, dest, spare)
   
   // method for moving disc from top of one tower
   // to top of other tower
   public void moveDisc(int start, int destination) {
     // loop through start column
     int tmp = 0;
-    for (int i = NUM_TOWERS-1; i >= 0; i--) {
+    for (int i = this.numDiscs-1; i >= 0; i--) {
       // find disc value
       // loop through destination column
       // i = towers j = discs
