@@ -64,13 +64,6 @@ public class Hanoi
    public void print() {
      System.out.println(this);
    }
-   
-   // Identify eligible towers to take discs?
-   // NEW: we don't need this.
-   /*public int discCheck() {
-     // check if size is less than the disc size of existing discs
-     
-   }*/
   
    public void moveTower(int dest) {
      // figures out additional variables method called from 
