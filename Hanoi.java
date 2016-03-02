@@ -32,9 +32,9 @@ public class Hanoi
    // toString to help with print
    public String toString() {
      String out = "";
-     for (int i = NUM_TOWERS; i > 0; i--) {
+     for (int i = this.numDiscs; i > 0; i--) {
        //System.out.println(" i = " + i);
-       for (int j = 0; j < this.numDiscs; j++) {
+       for (int j = 0; j < NUM_TOWERS; j++) {
          //System.out.println(" j = " + j);
          out = out + this.towers[i-1][j] + " ";
        }
