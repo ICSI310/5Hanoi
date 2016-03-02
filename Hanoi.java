@@ -5,7 +5,7 @@ public class Hanoi
    public static final int NUM_TOWERS = 3;
    // lets be reckless and skip getters/setters and make it public
    // bad form, but we'll do it just this once
-   public int[][] towers = new int[NUM_TOWERS][MAX_DISCS];
+   public int[][] towers = new int[MAX_DISCS][NUM_TOWERS];
    public int numDiscs;
    
    
