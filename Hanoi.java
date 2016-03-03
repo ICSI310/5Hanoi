@@ -23,9 +23,9 @@ public class Hanoi
      
      // initialize first tower
      for (int i = 0; i < size; i++) {
-       System.out.println(i);
+       //System.out.println(i);
        this.towers[i][0] = size - i;
-       System.out.println(i);
+       //System.out.println(i);
      }
    } //constructor: Hanoi
 
@@ -52,7 +52,7 @@ public class Hanoi
        // How do we find the top disc?
        // search for integer in spaces are not zero
        if (this.towers[i][towerNumber] != 0) {
-         System.out.println("getTopDisc: " + this.towers[i][towerNumber]);
+         //System.out.println("getTopDisc: " + this.towers[i][towerNumber]);
          return(this.towers[i][towerNumber]);
        }
      }
@@ -105,7 +105,7 @@ public class Hanoi
     // base case : move size 1 tower
     if (size == 1) {
       this.moveDisc(start, dest);
-      this.print();
+      //this.print();
     } // end base case
     else { // recursive case 
       // move size-1 tower from top of tower to spare
@@ -148,12 +148,12 @@ public class Hanoi
   
   // the main method
   public static void main(String[] args) {
-    Hanoi tower = new Hanoi(5);
+    Hanoi tower = new Hanoi(3);
     
-    System.out.println("new tower");
-    tower.print();
+    //System.out.println("new tower");
+    //tower.print();
     
-    System.out.println("moving tower");
+    //System.out.println("moving tower");
     tower.moveTower(2);
    
   } // method: main
